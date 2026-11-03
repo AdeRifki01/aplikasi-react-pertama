@@ -1,0 +1,11 @@
+.app {
+    min-height: 100vh;
+    padding: 40px 20px;
+    background: #f1f5f9;
+}
+
+.app h1 {
+    text-align: center;
+    color: #1e293b;
+    font-size: 28px;
+}
