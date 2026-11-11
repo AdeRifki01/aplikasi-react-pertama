@@ -6,7 +6,7 @@ function SkillList() {
     return (
         <div className="card">
             <h3>Daftar Materi Keahlian</h3>
-            <ul style={{ textAlign: 'left', paddingLeft: '20px' }}>
+            <ul style={{ textAlign: "left", paddingLeft: "20px" }}>
                 {skills.map((item, index) => (
                     <li key={index}>{item}</li>
                 ))}

@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import NewsCard from './NewsCard';
+import { useState, useEffect } from "react";
+import NewsCard from "./NewsCard";
 
 function NewsFeed() {
     // 1. Tiga Pilar State Pengendali UI
@@ -12,12 +12,12 @@ function NewsFeed() {
         setIsLoading(true);
         setError(null);
         try {
-            const res = await fetch('https://api.siputzx.my.id/api/berita/kompas');
+            const res = await fetch("https://api.siputzx.my.id/api/berita/kompas");
             if (!res.ok) throw new Error(`HTTP Error: ${res.status}`);
             const json = await res.json();
             setNews(json.data || []);
         } catch (err) {
-            setError(err.message || 'Gagal mengambil berita terkini.');
+            setError(err.message || "Gagal mengambil berita terkini.");
         } finally {
             setIsLoading(false);
         }
@@ -36,7 +36,7 @@ function NewsFeed() {
                     <p>Menampilkan {news.length} artikel dari API Siputzx</p>
                 </div>
                 <button className="btn-refresh" onClick={fetchNews} disabled={isLoading}>
-                    {isLoading ? '⌛ Memuat...' : '🔄 Segarkan Berita'}
+                    {isLoading ? "⌛ Memuat..." : "🔄 Segarkan Berita"}
                 </button>
             </div>
 
