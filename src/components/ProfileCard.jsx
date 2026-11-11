@@ -5,6 +5,7 @@ function ProfileCard() {
     // State untuk nama dan pekerjaan
     const [nama, setNama] = useState("Ade Rifki");
     const [pekerjaan, setPekerjaan] = useState("Web Developer");
+    const [isOnline, setIsOnline] = useState(true);
 
     // State untuk jumlah likes
     const [likes, setLikes] = useState(0);
@@ -30,6 +31,10 @@ function ProfileCard() {
                 <button className="like-button" onClick={() => setLikes(likes + 1)}>
                     ♥ Suka ({likes})
                 </button>
+            </div>
+            <div className="card-profile">
+                <span style={{ color: isOnline ? "#16a34a" : "#64748b" }}>{isOnline ? "Online" : "Offline"}</span>
+                <button onClick={() => setIsOnline(!isOnline)}>Ganti Status</button>
             </div>
         </div>
     );
