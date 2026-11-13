@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../css/profileCard.css";
+import "../css/ProfileCard.css";
 
 function ProfileCard() {
     // State untuk nama dan pekerjaan

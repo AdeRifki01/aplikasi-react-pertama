@@ -1,16 +1,16 @@
-const CATEGORY = "CNN Indonesia";
+const CATEGORY = 'CNN Indonesia';
 
-const dateFormatter = new Intl.DateTimeFormat("id-ID", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
+const dateFormatter = new Intl.DateTimeFormat('id-ID', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
 });
 
 function formatDate(isoDate) {
-    if (!isoDate) return "";
+    if (!isoDate) return '';
 
     const date = new Date(isoDate);
-    if (Number.isNaN(date.getTime())) return "";
+    if (Number.isNaN(date.getTime())) return '';
 
     return dateFormatter.format(date);
 }
@@ -22,7 +22,7 @@ export function mapNewsItems(items) {
     return items.map((item) => ({
         title: item.title,
         link: item.link,
-        image: item.image?.large || item.image?.small || "",
+        image: item.image?.large || item.image?.small || '',
         category: CATEGORY,
         date: formatDate(item.isoDate),
     }));

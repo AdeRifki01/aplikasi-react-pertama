@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
-import NewsCard from "./NewsCard";
-import { mapNewsItems } from "./NewsMapper";
+import { useState, useEffect } from 'react';
+import NewsCard from './NewsCard';
+import { mapNewsItems } from './newsMapper';
 
-const NEWS_URL = "https://berita-indo-api.vercel.app/v1/cnn-news";
+const NEWS_URL = 'https://berita-indo-api.vercel.app/v1/cnn-news';
 
 async function fetchNewsItems(signal) {
     const res = await fetch(NEWS_URL, { signal });
@@ -26,8 +26,8 @@ function NewsFeed() {
                 const items = await fetchNewsItems(controller.signal);
                 setNews(items);
             } catch (err) {
-                if (err.name === "AbortError") return;
-                setError(err.message || "Gagal mengambil berita terkini.");
+                if (err.name === 'AbortError') return;
+                setError(err.message || 'Gagal mengambil berita terkini.');
             } finally {
                 setIsLoading(false);
             }
@@ -43,7 +43,7 @@ function NewsFeed() {
         try {
             setNews(await fetchNewsItems());
         } catch (err) {
-            setError(err.message || "Gagal mengambil berita terkini.");
+            setError(err.message || 'Gagal mengambil berita terkini.');
         } finally {
             setIsLoading(false);
         }
@@ -57,7 +57,7 @@ function NewsFeed() {
                     <p>Menampilkan {news.length} artikel dari Berita Indo API</p>
                 </div>
                 <button className="btn-refresh" onClick={handleRefresh} disabled={isLoading}>
-                    {isLoading ? "⌛ Memuat..." : "🔄 Segarkan Berita"}
+                    {isLoading ? '⌛ Memuat...' : '🔄 Segarkan Berita'}
                 </button>
             </div>
 
